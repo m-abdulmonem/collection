@@ -3,6 +3,7 @@
 
 namespace Mabdulalmonem\Collection\Utilites;
 
+use Mabdulalmonem\Collection\Exceptions\CollectionException;
 
 class Collection implements \IteratorAggregate, \Countable
 {
@@ -11,6 +12,16 @@ class Collection implements \IteratorAggregate, \Countable
     public function __construct(protected $items = [])
     {
         $this->add($items);
+    }
+
+
+    public function __get(string $name) : mixed
+    {
+        if (array_key_exists($name,$this->items)){
+            return $this->get($name);
+        }
+        
+        return new CollectionException("key ($name) is not exists");
     }
 
 
