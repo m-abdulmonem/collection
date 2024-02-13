@@ -1,6 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Mabdulalmonem\Collection\Utilites\Collection;
+use Mabdulalmonem\Collection\Utilities\Collection;
 
 class CollectionTest extends TestCase{
 

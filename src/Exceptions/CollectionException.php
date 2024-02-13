@@ -9,6 +9,6 @@ class CollectionException extends \Exception{
 
     public function __toString(): string
     {
-        return ExceptionView::html($this);
+        return  ExceptionView::html($this);
     }
 }

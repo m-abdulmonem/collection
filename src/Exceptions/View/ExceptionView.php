@@ -1,7 +1,7 @@
 <?php
 namespace Mabdulalmonem\Collection\Exceptions\View;
 use PhpParser\Node\Stmt\TryCatch;
-use Mabdulalmonem\Collection\Utilites\Collection;
+use Mabdulalmonem\Collection\Utilities\Collection;
 use Mabdulalmonem\Collection\Exceptions\CollectionException;
 
 
@@ -43,7 +43,7 @@ class ExceptionView
         $arr = [];
 
         $class_methods = (new Collection(get_class_methods(CollectionException::class)))
-            ->excpet(['__toString', '__construct', '__wakeup']);
+            ->expect(['__toString', '__construct', '__wakeup']);
 
         foreach ($class_methods as $method_name) {
             $arr[lcfirst(str_replace("get", "", $method_name))] = $method_name;
